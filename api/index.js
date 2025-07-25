@@ -9,7 +9,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 import { MongoClient, ObjectId, ServerApiVersion } from "mongodb";
-const uri = process.env.MONGO_URI;
+const uri = "mongodb+srv://454250soriful:5LLFLlKswk8tJI4H@cluster0.tzateta.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
