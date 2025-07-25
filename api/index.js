@@ -6,10 +6,10 @@ dotenv.config();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+const PORT = 5000;
 
 import { MongoClient, ObjectId, ServerApiVersion } from "mongodb";
-const uri = "mongodb+srv://454250soriful:5LLFLlKswk8tJI4H@cluster0.tzateta.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const uri = process.env.MONGO_URI;
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
@@ -71,8 +71,7 @@ app.get('/', (req, res) => {
     res.send('Project is running')
 })
 
-app.listen(5000, () => {
-    console.log("Server is running on port 5000");
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 })
 
-// export default app;
